@@ -1,30 +1,28 @@
 const express = require('express');
 const server = express();
-const filmes = require('./src/data/filmes.json');
-const produtos = require('./src/data/produtos.json');
 const porta = process.env.PORT || 3210;
 
+const apiUsuario = require('./endpoint/usuario.js');
+const apiFilmes = require('./endpoint/filmes.js');
+const apiProdutos = require('./endpoint/produtos.js');
+const apiCaptcha = require('./endpoint/captcha.js');
 
 server.get('/', (req, res) => {
     return res.json({mensagem: 'API_VVC funcionando'})
 });
 
-server.get('/usuario', (req, res) => {
-    return res.json({usuario: 'Vinicius'})
-});
+server.get('/usuario', (req, res) => {apiUsuario.get(req, res);});
+//server.post('/usuario', upload.any(), apiUsuario.api); // Metodo POST
+server.get('/filmes', (req, res) => {apiFilmes.all(req, res);});
+server.get('/filme', (req, res) => {apiFilmes.get(req, res);});
 
-server.get('/filmes', (req, res) => {
-    return res.json(filmes)
-});
+server.get('/produtos', (req, res) => {apiProdutos.all(req, res);}); // http://localhost:3210/produtos
+server.get('/produto', (req, res) => {apiProdutos.get(req, res);}); // http://localhost:3210/produto?id=2
 
-server.get('/filme', (req, res) => {
-    let idFilmes = req.query.id
-    if (idFilmes == undefined){idFilmes=0}
-    else {idFilmes=idFilmes-1}
-    return res.json(filmes[idFilmes]);
-    //return res.json(filmes[req.url.query.id])
-});
+server.get('/captcha', (req, res) => {apiCaptcha.create(req, res);}); // http://localhost:3210/captcha?sessao=4321
+server.get('/captchacompare', (req, res) => {apiCaptcha.compare(req, res);}); // http://localhost:3210/captchacompare?sessao=4321,text=412345
 
+/*
 server.get('/produtos', (req, res) => {
     return res.json(produtos)
 });
@@ -36,7 +34,7 @@ server.get('/produto', (req, res) => {
     return res.json(produtos[idproduto]);
     //return res.json(produtos[req.url.query.id])
 });
-
+*/
 
 server.listen(porta, (err) => {
     if (err) throw err

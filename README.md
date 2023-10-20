@@ -1,8 +1,8 @@
 # api_vvc
 
 ```
-Experiments with API. 
-Alguns testes de API. 
+Experiments with API.
+Alguns testes de API.
 NODEJS + EXPRESS + nodemon
 ```
 
@@ -29,8 +29,20 @@ npm install express
 (Framework web que ajuda a criar APIs)
 ```
 
-## Instakar o NODEMON
+## Instalar o NODEMON
 ```
 npm install nodemon
-(Reinicia o servidor automaticamente qual algo é alterado.)
+(Reinicia o servidor automaticamente quando algo é alterado.)
+```
+
+## Instalar o SVG-CAPTCHA
+```
+npm install svg-captcha
+(útil se você não pode ou não deseja usar o google recaptcha.)
+```
+
+## Instalar o MEMORY-CACHE
+```
+npm install memory-cache
+(criar uma variavel globais que podem ser compartilhadas em requisições distintas.)
 ```

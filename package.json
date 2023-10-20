@@ -4,7 +4,7 @@
   "description": "Experiments with API.",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon ./index.js",
+    "start": "nodemon ./index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,6 +12,8 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.18.2",
-    "nodemon": "^3.0.1"
+    "memory-cache": "^0.2.0",
+    "nodemon": "^3.0.1",
+    "svg-captcha": "^1.4.0"
   }
 }
