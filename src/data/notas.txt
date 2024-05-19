@@ -1,4 +1,1 @@
- 
- 
- 
- cookie: '_ga=GA1.1.1641920479.1686201406; nickvvc=NickTetris0-24.66120412607696100; recordtetris3d=0; cookiedebug=false; recordtplaytime=161; recordtwolfenstein=773; recordsonic=32; _ga_6CRT549TBP=GS1.1.1687386746.35.0.1687386746.60.0.0; recordcobrinha=17; recordtetris=10; recordcobrinha3d=22; recordomeletedino=18; cookiemaquina=pc; cookiemetailhax=558; cookiemetailhay=100; cookiemetailhaz=-115; metailhasala=home; metavvcsala=home; cookiemetavvcx=-1; cookiemetavvcy=100; cookiemetavvcz=697' 
+cookie: '_ga=GA1.1.1641920479.1686201406; nickvvc=NickTetris0-24.66120412607696100; recordtetris3d=0; cookiedebug=false; recordtplaytime=161; recordtwolfenstein=773; recordsonic=32; _ga_6CRT549TBP=GS1.1.1687386746.35.0.1687386746.60.0.0; recordcobrinha=17; recordtetris=10; recordcobrinha3d=22; recordomeletedino=18; cookiemaquina=pc; cookiemetailhax=558; cookiemetailhay=100; cookiemetailhaz=-115; metailhasala=home; metavvcsala=home; cookiemetavvcx=-1; cookiemetavvcy=100; cookiemetavvcz=697' 
