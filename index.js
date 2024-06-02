@@ -40,16 +40,15 @@ server.get('/api/produto', (req, res) => {apiProdutos.get(req, res);}); // http:
 server.get('/produtoid', (req, res) => {apiProdutos.getID(req, res);}); // http://localhost:3210/produtoid?id=2
 server.get('/api/produtoid', (req, res) => {apiProdutos.getID(req, res);}); // http://localhost:3210/api/produtoid?id=2
 
-
 server.get('/captcha', (req, res) => {apiCaptcha.create(req, res);}); // http://localhost:3210/captcha?sessao=5555
 server.get('/api/captcha', (req, res) => {apiCaptcha.create(req, res);}); // http://localhost:3210/api/captcha?sessao=5555
 server.get('/captchacompare', (req, res) => {apiCaptcha.compare(req, res);}); // http://localhost:3210/captchacompare?sessao=5555&text=412345
 server.get('/api/captchacompare', (req, res) => {apiCaptcha.compare(req, res);}); // http://localhost:3210/api/captchacompare?sessao=5555&text=412345
 
-server.get('/playerupdate', (req, res) => {apiPlayers.update(req, res);}); // http://localhost:3210/playerupdate?mundo=1&Nick=teste1&x=1&y=2&z=3
-server.get('/api/playerupdate', (req, res) => {apiPlayers.update(req, res);}); // http://localhost:3210/api/playerupdate?mundo=1&Nick=teste1&x=1&y=2&z=3
-server.get('/playerstotal', (req, res) => {apiPlayers.total(req, res);}); // http://localhost:3210/playerstotal?mundo=1
-server.get('/api/playerstotal', (req, res) => {apiPlayers.total(req, res);}); // http://localhost:3210/api/playerstotal?mundo=1
+server.get('/playerupdate', (req, res) => {return res.json(apiPlayers.update(req, res))}); // http://localhost:3210/playerupdate?mundo=1&Nick=teste1&x=1&y=2&z=3
+server.get('/api/playerupdate', (req, res) => {return res.json(apiPlayers.update(req, res))}); // http://localhost:3210/api/playerupdate?mundo=1&Nick=teste1&x=1&y=2&z=3
+server.get('/playerstotal', (req, res) => {return res.json(apiPlayers.total(req, res))}); // http://localhost:3210/playerstotal?mundo=1
+server.get('/api/playerstotal', (req, res) => {return res.json(apiPlayers.total(req, res))}); // http://localhost:3210/api/playerstotal?mundo=1
 
 
 server.listen(porta, (err) => {

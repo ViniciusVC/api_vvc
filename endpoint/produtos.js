@@ -33,7 +33,6 @@ exports.allnome = function(req, res) {
     res.json(ProdutosNome);
 }
 
-
 exports.allDollar = function(req, res) {
     // Preços convertidos para dola.
     console.log('╔════════════════════════════════════════════╗');
@@ -59,7 +58,6 @@ exports.somaPreco = function(req, res) {
 
     res.json({"soma" : precosSomados.toFixed(2)});
 }
-
 
 exports.porGrupo = function(req, res) {
     // Total de preços.
@@ -99,7 +97,6 @@ exports.find = function(req, res) {
 
     }
 }
-
 
 exports.get = function(req, res) {
     // Retorna informação de apenas um produto pelo index.

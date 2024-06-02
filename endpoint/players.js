@@ -1,9 +1,19 @@
 const cache = require('memory-cache'); // Instanciar o memory-cache (Variavel global)
 
+
 console.log('Instanciou /endpoint/players.js');
 
-// Guardar variavies globais/session.
-// https://www.npmjs.com/package/memory-cache
+/*
+Guardar variavies globais/session.
+ https://www.npmjs.com/package/memory-cache
+
+ O objetivo deste endpoint é compartilhar a posição dos jogadores, entre todos ue estão no mesmo mundo.
+
+ '/playerupdate' // http://localhost:3210/playerupdate?mundo=1&Nick=teste1&x=1&y=2&z=3
+ '/api/playerupdate' // http://localhost:3210/api/playerupdate?mundo=1&Nick=teste1&x=1&y=2&z=3
+ '/playerstotal', // http://localhost:3210/playerstotal?mundo=1
+ '/api/playerstotal', // http://localhost:3210/api/playerstotal?mundo=1
+*/
 
 exports.update = function(req, res) {
     console.log('╔══════════════════════════════╗');
@@ -21,20 +31,25 @@ exports.update = function(req, res) {
     let playerZ = req.query.z
 
     if (mundo == undefined){
-        console.erro("ERRO : Mundo nao informado")
-        res.json({res: "erro",menssagem:"Mundo nao informado",method:varMetodo}) 
+        console.error("ERRO : Mundo nao informado")
+        return {res: "erro",menssagem:"Mundo nao informado",method:varMetodo}
+        //res.json({res: "erro",menssagem:"Mundo nao informado",method:varMetodo}) 
     } else if (playerNick == undefined){
-        console.erro("ERRO : Nick nao informado")
-        res.json({res: "erro",menssagem:"Nick nao informado",method:varMetodo}) 
+        console.error("ERRO : Nick nao informado")
+        return {res: "erro",menssagem:"Nick nao informado",method:varMetodo}
+        //res.json({res: "erro",menssagem:"Nick nao informado",method:varMetodo}) 
     } else if (playerX == undefined){
-        console.erro("ERRO : posicao X nao informada")
-        res.json({res: "erro",menssagem:"posicao X nao informada",method:varMetodo}) 
+        console.error("ERRO : posicao X nao informada")
+        return {res: "erro",menssagem:"posicao X nao informada",method:varMetodo}
+        //res.json({res: "erro",menssagem:"posicao X nao informada",method:varMetodo}) 
     } else if (playerY == undefined){
-        console.erro("ERRO : posicao Y nao informada")
-        res.json({res: "erro",menssagem:"posicao Y nao informada",method:varMetodo}) 
+        console.error("ERRO : posicao Y nao informada")
+        return {res: "erro",menssagem:"posicao Y nao informada",method:varMetodo}
+        //res.json({res: "erro",menssagem:"posicao Y nao informada",method:varMetodo}) 
     } else if (playerZ == undefined){
-        console.erro("ERRO : posicao Z nao informada")
-        res.json({res: "erro",menssagem:"posicao Z nao informada",method:varMetodo}) 
+        console.error("ERRO : posicao Z nao informada")
+        return {res: "erro",menssagem:"posicao Z nao informada",method:varMetodo}
+        //res.json({res: "erro",menssagem:"posicao Z nao informada",method:varMetodo}) 
     }else{
         let playerAtual = {nick:playerNick, posit:{x:playerX, y:playerY, z:playerZ}, time:40};
         let playerZerado = {nick:"", posit:{x:"0", y:"0", z:"0"}, time:0};
@@ -73,7 +88,8 @@ exports.update = function(req, res) {
             }
         }
         cache.put("listPlayers"+mundo, listPlayers, 3300000); // Criar ou atualizar a variavel global.
-        res.json(listPlayers)
+        return listPlayers
+        //res.json(listPlayers)
     }
 
 };
@@ -86,15 +102,19 @@ exports.total = function(req, res) {
     
     // posisao do player (x,y,z); 
     
+    let varMetodo = "get"
     if(req.method!=undefined){
         varMetodo=req.method;
     }
+
+    
     let mundo=req.query.mundo
     if (mundo == undefined){
 
-        console.erro("ERRO : Mundo nao informado")
-        res.json({res: "erro",menssagem:"Mundo nao informado",method:varMetodo}) 
-  
+        console.error("ERRO : Mundo nao informado")
+        return {res: "erro",menssagem:"Mundo nao informado",method:varMetodo}; 
+        //res.json({res: "erro",menssagem:"Mundo nao informado",method:varMetodo}) 
+        //res.code(200).send();
     }else{
 
         let playerZerado = {nick:"", posit:{x:"0", y:"0", z:"0"}, time:0};
@@ -122,7 +142,8 @@ exports.total = function(req, res) {
         }
         console.log("varTotal:"+varTotal);
         cache.put("listPlayers"+mundo, listPlayers, 3300000); 
-        res.json({playerslogados:varTotal}) 
+        return {playerslogados:varTotal}; 
+        //res.json({playerslogados:varTotal}) 
 
     }
 };
