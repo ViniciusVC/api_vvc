@@ -2,11 +2,11 @@
 /*
  Arquivo de teste com JEST.
  
- O Jast é um frameWork com varias ferramentas de teste.
+ O Jest é um frameWork com varias ferramentas de teste.
 
  Funções:
  - Describle -> Bloco de tests - test suites. 
- - It or Test -> declara unico teste unitario.
+ - It ou Test -> declara unico teste unitario.
  - Expect -> ações do resultado dos testes.
 
  Neste exemplo estamos usando o Describle, para rodar 2 testes.

@@ -16,7 +16,7 @@ exports.all = function(req, res) {
         // Aguarda receber todos os dados ates de chamar o controller...
         req.on('end', Controller.meusdocumentos(res, req.body,req.files));
     }else{
-        console.log('resposta API copm metodo GET');
+        console.log('resposta API com metodo GET');
         // Metodo GET e PUT nao faz nada.
         res.json(dataFilmes);
         //res.status(200).send('API nao pode ser acessado por '+req.method+'.');

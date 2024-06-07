@@ -138,10 +138,11 @@ exports.total = function(req, res) {
                 }
             }
             // Atualizar a variavel global.
-
+            //cache.put("listPlayers"+mundo, listPlayers, 3300000); // Criar ou atualizar a variavel global.
+            
         }
         console.log("varTotal:"+varTotal);
-        cache.put("listPlayers"+mundo, listPlayers, 3300000); 
+        
         return {playerslogados:varTotal}; 
         //res.json({playerslogados:varTotal}) 
 

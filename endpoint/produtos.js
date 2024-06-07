@@ -41,7 +41,8 @@ exports.allDollar = function(req, res) {
     console.log('Metodo = '+req.method); //GET
 
     const precosEmDolar = dataProdutos.map(p=> p.preco / 5);
-    res.json(precosEmDolar);
+    res.json(precosEmDolar); 
+    // Retorna array com os precos em dolar.
 } 
 
 exports.somaPreco = function(req, res) {
@@ -57,6 +58,7 @@ exports.somaPreco = function(req, res) {
     }, 0);
 
     res.json({"soma" : precosSomados.toFixed(2)});
+    // Retorna a soma de todos os precos.
 }
 
 exports.porGrupo = function(req, res) {
@@ -125,11 +127,10 @@ exports.getID = function(req, res) {
     if (IDProduto == undefined || IDProduto == ""){
         IDProdutos=1;
     }
-    
     const foundProduto = dataProdutos.find( prod => prod.id==IDProduto)
     if(foundProduto==undefined){
         res.json({"ERRO": "Produto nao encontrado."});
-    }  
+    }
     res.json(foundProduto);
 }
 

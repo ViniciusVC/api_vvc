@@ -1,11 +1,17 @@
 # api_vvc
 
-```
-API study with nodejs.
 Alguns testes de API.
-NODEJS + EXPRESS + nodemon
-https://github.com/ViniciusVC/api_vvc
-```
+
+![NodeJS](https://img.shields.io/badge/node.js-6DA55F?style=for-the-badge&logo=node.js&logoColor=white) 
+![Express.js](https://img.shields.io/badge/express.js-%23404d59.svg?style=for-the-badge&logo=express&logoColor=%2361DAFB) 
+![Nodemon](https://img.shields.io/badge/NODEMON-%23323330.svg?style=for-the-badge&logo=nodemon&logoColor=%BBDEAD) 
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=for-the-badge&logo=jest&logoColor=white) 
+![SQLite](https://img.shields.io/badge/sqlite-%2307405e.svg?style=for-the-badge&logo=sqlite&logoColor=white)
+
+NODEJS + EXPRESS + Nodemon + JEST + Memory-Cache + SVG-CAPTCHA + SQLite
+
+Repositorio: https://github.com/ViniciusVC/api_vvc
+
 
 # Rodar o projeto :
 ```
@@ -13,6 +19,14 @@ npm start
 ```
 
 ![teste API](/src/img/screenshot.png "screenshot")
+
+
+# Rodar testes automáticos:
+```
+npm test
+```
+![teste API](/src/img/screenshot_test.png "screenshot")
+
 
 # Comando que foram usados.
 
@@ -56,13 +70,13 @@ npm install memory-cache
 (criar uma variavel globais que podem ser compartilhadas em requisições distintas.)
 ```
 
-# Rotas :
+# Rotas
 ```
 '/' - ex.: http://localhost:3210/
 '/api/' - ex.: http://localhost:3210/api/
 
 '/usuario' - ex.:http://localhost:3210/usuario
-'/api/usuario' - ex.: http://localhost:3210/api/usuario Metodo
+'/api/usuario' - ex.: http://localhost:3210/api/usuario 
 
 '/filmes' - ex.: http://localhost:3210/filmes
 '/filme' - ex.: http://localhost:3210/filme?id=2
@@ -97,7 +111,7 @@ npm install memory-cache
 '/api/playerstotal' - ex.: http://localhost:3210/api/playerstotal?mundo=1
 ```
 
-## Banco de Dados
+# Banco de Dados
 ```
 Instalar o SQLite: 
 sudo apt-get update
