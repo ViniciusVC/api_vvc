@@ -1,8 +1,9 @@
-console.log('Instanciou /endpoint/usuario.js');
+console.log('Instanciou /controller/usuario.js');
 
-exports.get = function(req, res) {
+export default function get(req, res) {
+    //exports.get = function(req, res) {
     console.log('╔════════════════════════════════════════╗');
-    console.log('║      endpoin /cliente.get API_VVC      ║');
+    console.log('║ endpoin controller/cliente.get API_VVC ║');
     console.log('╚════════════════════════════════════════╝');
     console.log('Metodo = '+req.method); //GET
      
@@ -22,10 +23,11 @@ exports.get = function(req, res) {
     */
   }
 
-exports.post = function(req, res) {
-    console.log('╔════════════════════════════════════════╗');
-    console.log('║     endpoin /cliente.post API_VVC      ║');
-    console.log('╚════════════════════════════════════════╝');
+export async function post(req, res) {
+    //exports.post = function(req, res) {
+    console.log('╔═══════════════════════════════════════╗');
+    console.log('║endpoin controller/cliente.post API_VVC║');
+    console.log('╚═══════════════════════════════════════╝');
     console.log('Metodo = '+req.method); //POST
     
     res.json({usuario: 'Vinicius', metodo:'post'})

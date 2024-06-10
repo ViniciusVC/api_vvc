@@ -1,11 +1,13 @@
 //const Controller = require('../controller/meusdocumentos.js');
-const dataFilmes = require('../src/data/filmes.json');
+//const dataFilmes = require('../data/filmes.json');
+import dataFilmes from '../data/filmes.json' assert { type: "json" };
 
-console.log('Instanciou /endpoint/filmes.js');
+console.log('Instanciou /controller/filmes.js');
 
-exports.all = function(req, res) {
+export default function all(req, res) {
+    //exports.all = function(req, res) {
     console.log('╔══════════════════════════════════════╗');
-    console.log('║      endpoin /filme.get API_VVC      ║');
+    console.log('║     controller/filme.get API_VVC     ║');
     console.log('╚══════════════════════════════════════╝');
     console.log('Metodo = '+req.method); //GET
 
@@ -22,12 +24,12 @@ exports.all = function(req, res) {
         //res.status(200).send('API nao pode ser acessado por '+req.method+'.');
     };
     
-
   }
 
-exports.get = function(req, res) {
+export async function get(req, res) {
+    //exports.get = function(req, res) {
     console.log('╔══════════════════════════════════════╗');
-    console.log('║      endpoin /filme.get API_VVC      ║');
+    console.log('║     controller/filme.get API_VVC     ║');
     console.log('╚══════════════════════════════════════╝');
     console.log('Metodo = '+req.method); //GET
 

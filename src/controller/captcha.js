@@ -1,15 +1,21 @@
 
-const svgCaptcha = require('svg-captcha'); // Instanciar biblioteca memory-cache (gera rador do SVG)
-var cache = require('memory-cache'); // Instanciar o memory-cache (Variavel global)
+// Instanciar biblioteca memory-cache (gera rador do SVG)
+//const svgCaptcha = require('svg-captcha'); 
+import svgCaptcha from 'svg-captcha';
 
-console.log('Instanciou /endpoint/captcha.js');
+// Instanciar o memory-cache (Variavel global)
+//var cache = require('memory-cache'); 
+import cache from 'memory-cache';
+
+console.log('Instanciou /controller/captcha.js');
 
 // Guardar variavies globais/session.
 // https://www.npmjs.com/package/memory-cache
 
-exports.create = function(req, res) {
+export default function create(req, res) {
+//exports.create = function(req, res) {
     console.log('╔════════════════════════════════════════╗');
-    console.log('║   endpoint/captcha.create              ║');
+    console.log('║   controller/captcha.create            ║');
     console.log('╚════════════════════════════════════════╝');
     console.log('(Gerando captcha...)');
     
@@ -28,9 +34,11 @@ exports.create = function(req, res) {
     res.status(200).send(varcaptcha.data);
 };
 
-exports.compare = function(req, res) {
+
+export async function compare(req, res) {
+//exports.compare = function(req, res) {
     console.log('╔════════════════════════════════════════╗');
-    console.log('║   endpoint/captcha.compare             ║');
+    console.log('║   controller/captcha.compare           ║');
     console.log('╚════════════════════════════════════════╝');
     console.log('(Confirmar) Nao disponivel.');
 

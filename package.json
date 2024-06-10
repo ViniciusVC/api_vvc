@@ -4,7 +4,8 @@
   "description": "API study with nodejs.",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js",
+    "dev": "nodemon ./index.js",
+    "start": "node ./index.js",
     "test": "jest --passWithNoTests"
   },
   "keywords": [],
@@ -18,5 +19,6 @@
   },
   "devDependencies": {
     "jest": "^29.7.0"
-  }
+  },
+  "type": "module"
 }

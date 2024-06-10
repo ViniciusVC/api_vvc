@@ -52,10 +52,22 @@ npm install nodemon
 (Reinicia o servidor automaticamente quando algo é alterado.)
 ```
 
-## Instalar o JEST
+## JEST
 ```
+Instalar o JEST:
 npm install --save-dev jest
 (Biblioteca de testes, apenas no ambiente de desnvolviemnto.)
+
+O jest.config.json é o arquivo de configuração do JEST (para rodar testes automatizados).
+
+testEnvironment é o ambiente usado no projeto
+testMatch Define arquivos de teste com .js dentro do diretorio __teste__.
+
+Ob.:
+ReferenceError: module is not defined in ES module scope
+I have "type": "module" in package.json file. If you remove that it will fix this.
+Alternatively, if you want to keep "type": "module" you could convert your jest.config.js to be jest.config.json. 
+
 ```
 
 ## Instalar o SVG-CAPTCHA
@@ -121,4 +133,17 @@ Criar o banco:
 $ sqlite3 bancoapivvc.db
 
 (Vide src/data/script.sql)
+
+Instalar o SQLite no NodeJS:
+npm install sqlite3 --save
+npm install sqlite --save
+Criar arquivo configDB.js
+
 ```
+
+# Nota
+```
+Para usar o "import" inclua a linha a baixo no  package.json:
+"type": "module"
+
+ ```

@@ -18,8 +18,10 @@
  '/api/playerstotal', // http://localhost:3210/api/playerstotal?mundo=1
  */
 
- //import { describe, expect, test } from "@jest/globals"
- const EndPointPlayer = require('../endpoint/players');
+import { describe, expect, test } from "@jest/globals"
+
+//const EndPointPlayer = require('../endpoint/players');
+import EndPointPlayer from '../endpoint/players'
 
  //jest.mock('../../caminho/arquivo');
  

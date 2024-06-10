@@ -1,7 +1,7 @@
-const cache = require('memory-cache'); // Instanciar o memory-cache (Variavel global)
+// const cache = require('memory-cache'); // Instanciar o memory-cache (Variavel global)
+import cache from 'memory-cache';
 
-
-console.log('Instanciou /endpoint/players.js');
+console.log('Instanciou /controller/players.js');
 
 /*
 Guardar variavies globais/session.
@@ -15,7 +15,8 @@ Guardar variavies globais/session.
  '/api/playerstotal', // http://localhost:3210/api/playerstotal?mundo=1
 */
 
-exports.update = function(req, res) {
+export async function update(req, res) {
+    //exports.update = function(req, res) {
     console.log('╔══════════════════════════════╗');
     console.log('║  endpoint/updateplayers.get  ║');
     console.log('╚══════════════════════════════╝');
@@ -94,8 +95,8 @@ exports.update = function(req, res) {
 
 };
 
-
-exports.total = function(req, res) {
+export default function total(req, res) {
+    //exports.total = function(req, res) {
     console.log('╔════════════════════════════════╗');
     console.log('║  endpoint/updateplayers.total  ║');
     console.log('╚════════════════════════════════╝');

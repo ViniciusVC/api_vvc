@@ -1,12 +1,31 @@
+
+/*
+//const openDb = require('./configDB.js');
 const express = require('express');
 const server = express();
 const porta = process.env.PORT || 3210;
+const apiUsuario = require('./src/endpoint/usuario.js');
+const apiFilmes = require('./src/endpoint/filmes.js');
+const apiProdutos = require('./src/endpoint/produtos.js');
+const apiCaptcha = require('./src/endpoint/captcha.js');
+const apiPlayers = require('./src/endpoint/players.js');
+//Para usar o "import" inclua a linha a baixo no  package.json:
+//"type": "module"
+*/
 
-const apiUsuario = require('./endpoint/usuario.js');
-const apiFilmes = require('./endpoint/filmes.js');
-const apiProdutos = require('./endpoint/produtos.js');
-const apiCaptcha = require('./endpoint/captcha.js');
-const apiPlayers = require('./endpoint/players.js');
+// Usando módulos
+import {createTablePessoa, insertPessoa, updatePessoa, selectPessoas, selectPessoa, deletePessoa } from "./src/controller/pessoa.js";
+createTablePessoa(); // Irá criar a tabela pessoa
+
+import express from 'express'; // Servidor web
+const server = express();
+const porta = process.env.PORT || 3210;
+import apiUsuario from './src/controller/usuario.js';
+import apiFilmes from './src/controller/filmes.js';
+import apiProdutos from './src/controller/produtos.js';
+import apiCaptcha from './src/controller/captcha.js';
+import apiPlayers from './src/controller/players.js';
+
 
 server.get('/', (req, res) => {return res.json({mensagem: 'API_VVC funcionando'})});
 server.get('/api/', (req, res) => {return res.json({mensagem: 'API_VVC funcionando'})});
@@ -50,6 +69,11 @@ server.get('/api/playerupdate', (req, res) => {return res.json(apiPlayers.update
 server.get('/playerstotal', (req, res) => {return res.json(apiPlayers.total(req, res))}); // http://localhost:3210/playerstotal?mundo=1
 server.get('/api/playerstotal', (req, res) => {return res.json(apiPlayers.total(req, res))}); // http://localhost:3210/api/playerstotal?mundo=1
 
+server.get('/pessoas', selectPessoas);
+server.get('/pessoa', selectPessoa);
+server.post('/pessoa', insertPessoa);
+server.put('/pessoa', updatePessoa);
+server.delete('/pessoa', deletePessoa);
 
 server.listen(porta, (err) => {
     if (err) throw err
@@ -57,3 +81,4 @@ server.listen(porta, (err) => {
     console.log('\u001b[34m║ \x1b[33mIniciou a aplicação na porta : ' + porta + '           \u001b[34m║');
     console.log('\u001b[34m╚═══════════════════════════════════════════════╝\u001b[0m');
 })
+

@@ -1,8 +1,10 @@
-const dataProdutos = require('../src/data/produtos.json');
+//const dataProdutos = require('../data/produtos.json');
+import dataProdutos from '../data/produtos.json' assert { type: "json" };
 
-console.log('Instanciou /endpoint/produtos.js');
+console.log('Instanciou /controller/produtos.js');
 
-exports.all = function(req, res) {
+export default function all(req, res) {
+    //exports.all = function(req, res) {
     console.log('╔══════════════════════════════════════╗');
     console.log('║    endpoin /produtos.all API_VVC     ║');
     console.log('╚══════════════════════════════════════╝');
@@ -22,7 +24,8 @@ exports.all = function(req, res) {
     };
 }
 
-exports.allnome = function(req, res) {
+export async function allnome(req, res) {
+    //exports.allnome = function(req, res) {
     // Apenas os nomes dos produtos.
     console.log('╔════════════════════════════════════════╗');
     console.log('║   endpoin /produtos.allnome API_VVC    ║');
@@ -33,7 +36,8 @@ exports.allnome = function(req, res) {
     res.json(ProdutosNome);
 }
 
-exports.allDollar = function(req, res) {
+export async function allDollar(req, res) {
+    //exports.allDollar = function(req, res) {
     // Preços convertidos para dola.
     console.log('╔════════════════════════════════════════════╗');
     console.log('║    endpoin /produtos.allDollar API_VVC     ║');
@@ -45,7 +49,8 @@ exports.allDollar = function(req, res) {
     // Retorna array com os precos em dolar.
 } 
 
-exports.somaPreco = function(req, res) {
+export async function somaPreco(req, res) {
+    //exports.somaPreco = function(req, res) {
     // Total de preços.
     console.log('╔════════════════════════════════════════════╗');
     console.log('║    endpoin /produtos.somaPreco API_VVC     ║');
@@ -61,7 +66,8 @@ exports.somaPreco = function(req, res) {
     // Retorna a soma de todos os precos.
 }
 
-exports.porGrupo = function(req, res) {
+export async function porGrupo(req, res) {
+    //exports.porGrupo = function(req, res) {
     // Total de preços.
     console.log('╔════════════════════════════════════════════╗');
     console.log('║    endpoin /produtos.Domesticos API_VVC    ║');
@@ -78,7 +84,8 @@ exports.porGrupo = function(req, res) {
     res.json(produtosPorGrupo);
 }
 
-exports.find = function(req, res) {
+export async function find(req, res) {
+    //exports.find = function(req, res) {
     // Retorna informação de apenas um produto pelo ID.
     console.log('╔══════════════════════════════════════╗');
     console.log('║   endpoin /produtos.find  API_VVC    ║');
@@ -100,7 +107,8 @@ exports.find = function(req, res) {
     }
 }
 
-exports.get = function(req, res) {
+export async function get(req, res) {
+    //exports.get = function(req, res) {
     // Retorna informação de apenas um produto pelo index.
     console.log('╔══════════════════════════════════════╗');
     console.log('║    endpoin /produtos.get API_VVC     ║');
@@ -115,7 +123,8 @@ exports.get = function(req, res) {
     res.json(dataProdutos[indexProdutos]);
 }
 
-exports.getID = function(req, res) {
+export async function getID(req, res) {
+    //exports.getID = function(req, res) {
     // Retorna informação de apenas um produto pelo ID.
     console.log('╔══════════════════════════════════════╗');
     console.log('║   endpoin /produtos.getID API_VVC    ║');
